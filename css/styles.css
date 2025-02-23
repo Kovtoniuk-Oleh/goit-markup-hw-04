@@ -89,11 +89,13 @@ img {
 /*#----------------------------------header*/
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .container_header {
   display: flex;
-
+  align-items: center;
   justify-content: space-between;
 }
 .header_navigation {
@@ -141,14 +143,15 @@ img {
   letter-spacing: 0.02em;
 }
 
-.header_menu_link:focus,
-.current {
+.header_menu_link:focus {
   color: var(--ocean, #404bbf);
 }
-/*.current {
-  color: #404bbf;
-}*/
-.header_menu_link.current::before {
+.current {
+  position: relative;
+  color: var(--ocean, #404bbf);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header_menu_link.current::after {
   content: '';
   position: absolute;
   left: 0;
@@ -161,6 +164,7 @@ img {
 /*#----------------------------------header*/
 .address {
   font-style: normal;
+  margin-left: auto;
 }
 .address_list {
   display: flex;
@@ -174,6 +178,7 @@ img {
   font-size: 16px;
   line-height: 1.5; /* 150% 24px*/
   letter-spacing: 0.02em; /* 0.32px */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address_menu_mail_tel:hover,
@@ -227,6 +232,7 @@ img {
   margin-right: auto;
   padding: 16px 32px;
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero_btn:hover,
 .hero_btn:focus {
@@ -237,10 +243,10 @@ img {
 /*-------------------------------motivation*/
 
 .motivation {
-  padding-top: 120px;
+  /*padding-top: 120px;
   padding-bottom: 120px;
   height: auto;
-  width: ;
+  */
 }
 .visually-hidden {
   position: absolute;
@@ -299,11 +305,11 @@ img {
 /*-------------------------------team*/
 
 .team {
-  padding-top: 120px;
+  /*padding-top: 120px;
   height: 732px;
   display: flex;
   align-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap;*/
   background-color: var(--cloud, #f4f4fd);
 }
 .team_our {
@@ -481,7 +487,7 @@ img {
   font-family: var(--second-family);
   font-weight: 700;
   font-size: 18px;
-  line-height: 1, 7;
+  line-height: 1.7;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--iris, #4d5ae5);
@@ -506,7 +512,7 @@ img {
 .footer_networks_text {
   font-weight: 500;
   font-size: 16px;
-  line-height: 150%;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--white);
   margin-bottom: 16px;
